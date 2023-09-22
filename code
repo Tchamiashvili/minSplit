@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class M {
+	static int minSplit(int amount) {
+		int m = 0;
+		m+= amount / 50;
+        amount -= 50 * (amount / 50);
+        
+        m += amount / 20;
+        amount -= 20 * (amount / 20);
+        
+        m += amount / 10;
+        amount -= 10 * (amount / 10);
+        
+        m += amount / 5;
+        amount -= 5 * (amount / 5);
+        
+        m += amount / 1;
+        amount -= 1 * (amount / 1);
+        
+		return m;
+	}
+	
+
+	public static void main(String[] args) {
+		int x;
+		Scanner scan = new Scanner(System.in);
+		x=scan.nextInt();
+		scan.close();
+		System.out.println(minSplit(x));
+	}
+
+}
